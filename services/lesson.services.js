@@ -49,3 +49,13 @@ export const createLesson = async (lessonData) => {
         throw error
     }
 }
+
+export const updateLesson = async (id, lessonData) => {
+    try {
+        const response = await axios.put(`${baseURL}/${id}`, lessonData)
+        return response
+    } catch (error) {
+        console.error(error)
+        throw error
+    }
+}
