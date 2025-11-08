@@ -35,7 +35,7 @@ export default function EditLesson() {
                 await updateLesson(id, values)
                 setShow(true)
                 setTimeout(() => {
-                    navigate('/se123456/lessons')
+                    navigate('/all-lessons')
                 }, 1500)
             } catch (error) {
                 console.error("Error updating lesson:", error)
@@ -106,7 +106,7 @@ export default function EditLesson() {
                             <Form.Control 
                                 type="text" 
                                 name="lessonImage" 
-                                placeholder="https://example.com/image.jpg" 
+                                placeholder="https://vidu.com/anh.jpg" 
                                 value={formik.values.lessonImage}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
@@ -166,7 +166,7 @@ export default function EditLesson() {
                         <Button variant="primary" type="submit" className="me-2">
                             Update Lesson
                         </Button>
-                        <Button variant="secondary" onClick={() => navigate('/se123456/lessons')}>
+                        <Button variant="secondary" onClick={() => navigate('/all-lessons')}>
                             Cancel
                         </Button>
                     </Form>

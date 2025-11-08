@@ -13,10 +13,10 @@ function App() {
         <NavigationBar/>
         <Routes>
             <Route path="/" element={<Home/>}/>
-            <Route path="/lessons/:id" element={<Detail/>}/>
+            <Route path="/se190185/lessons/:id" element={<Detail/>}/>
             <Route path="/all-lessons" element={<AllLesson/>}/>
             <Route path="/add-lesson" element={<AddLesson/>}/>
-            <Route path="/se123456/lessons/edit/:id" element={<EditLesson/>}/>
+            <Route path="/se190185/lessons/edit/:id" element={<EditLesson/>}/>
         </Routes>
     </>
   )

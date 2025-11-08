@@ -12,7 +12,7 @@ export default function AllLesson() {
     const [show, setShow] = useState(false)
     const schema = {
         lessonTitle: Yup.string().required('Required').matches(/^[a-zA-Z0-9\s]+$/, 'Only alphanumeric characters and spaces are allowed'),
-        imageUrl: Yup.string().url('Invalid URL').required('Required'),
+        lessonImage: Yup.string().url('Invalid URL').required('Required'),
         estimatedTime: Yup.number().min(0, 'Must be non-negative').required('Required'),
         isCompleted: Yup.boolean().required('Required'),
         level: Yup.string().oneOf(['N1', 'N2', 'N3', 'N4', 'N5'], 'Invalid level').required('Required')
@@ -21,7 +21,7 @@ export default function AllLesson() {
     const formik = useFormik({
         initialValues: {
             lessonTitle: '',
-            imageUrl: '',
+            lessonImage: '',
             estimatedTime: '0',
             isCompleted: false,
             level: ''
@@ -61,7 +61,7 @@ export default function AllLesson() {
                     <Form onSubmit={formik.handleSubmit}>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Label>Lesson Title</Form.Label>
-                            <Form.Control type="text" name="lessonTitle" placeholder="name@example.com" value={formik.values.lessonTitle}
+                            <Form.Control type="text" name="lessonTitle" placeholder="Name" value={formik.values.lessonTitle}
                                 onChange={formik.handleChange} />
                             {formik.errors.lessonTitle && formik.touched.lessonTitle && (
                                 <div className="text-danger">{formik.errors.lessonTitle}</div>
@@ -69,10 +69,10 @@ export default function AllLesson() {
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                             <Form.Label>Image URL</Form.Label>
-                            <Form.Control type="text" name="imageUrl" placeholder="https://example.com/image.jpg" value={formik.values.imageUrl}
+                            <Form.Control type="text" name="lessonImage" placeholder="https://example.com/image.jpg" value={formik.values.lessonImage}
                                 onChange={formik.handleChange} />
-                            {formik.errors.imageUrl && formik.touched.imageUrl && (
-                                <div className="text-danger">{formik.errors.imageUrl}</div>
+                            {formik.errors.lessonImage && formik.touched.lessonImage && (
+                                <div className="text-danger">{formik.errors.lessonImage}</div>
                             )}
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">

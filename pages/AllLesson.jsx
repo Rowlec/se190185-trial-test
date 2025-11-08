@@ -45,12 +45,12 @@ export default function AllLessons() {
                             {lessons.map((l) => (
                                 <tr key={l.id}>
                                     <td><Image src={l.lessonImage} rounded style={{ width: 80 }} /></td>
-                                    <td onClick={() => navigation(`/se123456/lessons/${l.id}`)}>{l.lessonTitle}</td>
+                                    <td onClick={() => navigation(`/se190185/lessons/${l.id}`)}>{l.lessonTitle}</td>
                                     <td>{l.estimatedTime}</td>
                                     <td>{l.level}</td>
                                     <td>
                                         <span
-                                            onClick={() => navigation(`/se123456/lessons/edit/${l.id}`)}
+                                            onClick={() => navigation(`/se190185/lessons/edit/${l.id}`)}
                                             style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', marginRight: '10px' }}>
                                             Edit
                                         </span>
